@@ -34490,7 +34490,7 @@ var interval = setInterval(function() {
     else {
         clearInterval(interval);
     }
-}, 500);
+}, 200);
 
 function generate_graph(data, svg, x_scale, y_scale) {
 
@@ -34559,7 +34559,7 @@ function update_graph(data, svg, x_scale, y_scale) {
         .selectAll('line')
         .data(data.links)
         .transition()
-        .duration(400)
+        .duration(200)
         .style('stroke', 'black')
         .attr('x1', function(d) {
             return x_scale(data.nodes[d.source].x);
@@ -34580,7 +34580,7 @@ function update_graph(data, svg, x_scale, y_scale) {
     svg.selectAll('circle')
         .data(data.nodes)
         .transition()
-        .duration(400)
+        .duration(200)
         .attr('cx', function (d) {
             return x_scale(d.x);
         })
@@ -34595,7 +34595,7 @@ function update_graph(data, svg, x_scale, y_scale) {
     svg.selectAll('text')
         .data(data.nodes)
         .transition()
-        .duration(400)
+        .duration(200)
         .text(function(d) {
             return d.id;
         })
